@@ -45,3 +45,29 @@ Proceed to Step 2: Load and explore the dataset using Pandas and visualize churn
 ### Technical Skills
 - Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
 - Jupyter Notebook, VS Code, Anaconda
+
+
+## Step 2: Load and Explore the Dataset
+
+### Objective
+Load the Telco Customer Churn dataset and perform exploratory data analysis (EDA) to understand its structure and identify patterns.
+
+### Steps Completed
+1. **Loaded Dataset**:
+   - Used Pandas to load `WA_Fn-UseC_-Telco-Customer-Churn.csv` in `churn_analysis.py`.
+2. **Inspected Data**:
+   - Checked shape (~7,043 rows, 21 columns), columns, data types, and missing values.
+3. **Performed EDA**:
+   - Summarized numerical features (`tenure`, `MonthlyCharges`, `TotalCharges`) with `describe()`.
+   - Visualized churn distribution using Seaborn, noting class imbalance.
+   - Explored churn vs. contract type, identifying higher churn in month-to-month contracts.
+4. **Saved Visualizations**:
+   - Saved churn distribution and churn by contract plots to `results/` as PNGs.
+
+### Key Findings
+- Dataset has ~7,043 rows and 21 columns, with minimal missing values (TotalCharges may need cleaning).
+- Churn is imbalanced (fewer `Yes` than `No`), suggesting techniques like SMOTE for modeling.
+- Month-to-month contracts show higher churn, indicating `Contract` as a key predictor.
+
+### Next Steps
+Proceed to Step 3: Preprocess the data by handling missing values, encoding categorical variables, and scaling features.
