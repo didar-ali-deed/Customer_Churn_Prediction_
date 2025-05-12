@@ -1,73 +1,90 @@
+
 # Customer Churn Prediction Project
 
-This project predicts customer churn using the Telco Customer Churn dataset from Kaggle, implementing multiple machine learning models (Logistic Regression, Decision Tree, k-NN) to compare performance. The project demonstrates skills in data preprocessing, model building, evaluation, and visualization using Python, Pandas, Scikit-learn, Matplotlib, and Seaborn.
+This project predicts customer churn using the Telco Customer Churn dataset from Kaggle, implementing multiple machine learning models (Logistic Regression, Decision Tree, k-NN) to compare performance. It showcases skills in data preprocessing, model building, evaluation, and visualization using Python and essential data science libraries.
 
-## Step 1: Set Up Your Environment
+## 📁 Project Structure
 
-### Objective
-Set up the Python environment in VS Code with Anaconda, install required libraries, download the dataset, and organize the project structure.
+```
+Churn_Prediction/
+├── data/
+│   └── WA_Fn-UseC_-Telco-Customer-Churn.csv
+├── notebooks/
+│   └── churn_analysis.ipynb
+├── scripts/
+├── results/
+├── requirements.txt
+└── README.md
+```
 
-### Tools
+## ⚙️ Step 1: Environment Setup
+
+### Tools Used
 - VS Code
-- Anaconda
+- Anaconda (Python 3.9)
+- Jupyter Notebook
+
+### Setup Instructions
+1. **Create and activate environment**:
+   ```bash
+   conda create -n churn_project python=3.9
+   conda activate churn_project
+   ```
+
+2. **Install required libraries**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Open Notebook**:
+   ```bash
+   jupyter notebook notebooks/churn_analysis.ipynb
+   ```
+
+4. **Dataset**:
+   - Download [Telco Customer Churn dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+   - Place it in the `data/` folder.
+
+## 📊 Project Workflow
+
+1. **Exploratory Data Analysis (EDA)**:
+   - Understand dataset characteristics and churn distribution.
+
+2. **Data Preprocessing**:
+   - Handle missing values, encode categories, scale features.
+
+3. **Model Training**:
+   - Logistic Regression
+   - Decision Tree
+   - k-NN
+
+4. **Model Evaluation**:
+   - Accuracy scores, classification reports, confusion matrices.
+
+5. **Improvements**:
+   - Hyperparameter tuning
+   - SMOTE for imbalance correction
+
+6. **Visualization**:
+   - Churn distribution, feature importance, model performance comparison.
+
+## 🧪 Requirements
+
 - Python 3.9
-- Kaggle Telco Customer Churn dataset
+- Jupyter Notebook
+- See `requirements.txt` for full dependency list.
 
-### Steps Completed
-1. **Created Anaconda Environment**:
-   - Created and activated a dedicated environment: `conda create -n churn_project python=3.9` and `conda activate churn_project`.
-2. **Installed Libraries**:
-   - Installed required libraries: `pip install pandas numpy scikit-learn matplotlib seaborn`.
-3. **Configured VS Code**:
-   - Selected `churn_project` as the Python interpreter in VS Code.
-   - Installed Python extension for enhanced coding support.
-4. **Downloaded Dataset**:
-   - Downloaded `WA_Fn-UseC_-Telco-Customer-Churn.csv` from [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn).
-   - Saved to `data/` folder.
-5. **Set Up Project Structure**:
-   - Created folders: `data/`, `notebooks/`, `scripts/`, `results/`.
-   - Structure:
+## 📌 Usage
 
-   Churn_Prediction/
-        ├── data/
-        │   └── WA_Fn-UseC_-Telco-Customer-Churn.csv
-        ├── notebooks/
-        │   └── churn_analysis.ipynb
-        ├── scripts/
-        ├── results/
-6. **Created Jupyter Notebook**:
-- Set up `churn_analysis.ipynb` in `notebooks/` using VS Code’s Jupyter support.
-- Tested setup with a sample Pandas import.
+```bash
+jupyter notebook notebooks/churn_analysis.ipynb
+```
 
-### Next Steps
-Proceed to Step 2: Load and explore the dataset using Pandas and visualize churn distribution with Seaborn/Matplotlib.
+## 📜 License
 
-### Technical Skills
-- Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
-- Jupyter Notebook, VS Code, Anaconda
+This project is licensed under the MIT License.
 
+## 👤 Author
 
-## Step 2: Load and Explore the Dataset
-
-### Objective
-Load the Telco Customer Churn dataset and perform exploratory data analysis (EDA) to understand its structure and identify patterns.
-
-### Steps Completed
-1. **Loaded Dataset**:
-   - Used Pandas to load `WA_Fn-UseC_-Telco-Customer-Churn.csv` in `churn_analysis.py`.
-2. **Inspected Data**:
-   - Checked shape (~7,043 rows, 21 columns), columns, data types, and missing values.
-3. **Performed EDA**:
-   - Summarized numerical features (`tenure`, `MonthlyCharges`, `TotalCharges`) with `describe()`.
-   - Visualized churn distribution using Seaborn, noting class imbalance.
-   - Explored churn vs. contract type, identifying higher churn in month-to-month contracts.
-4. **Saved Visualizations**:
-   - Saved churn distribution and churn by contract plots to `results/` as PNGs.
-
-### Key Findings
-- Dataset has ~7,043 rows and 21 columns, with minimal missing values (TotalCharges may need cleaning).
-- Churn is imbalanced (fewer `Yes` than `No`), suggesting techniques like SMOTE for modeling.
-- Month-to-month contracts show higher churn, indicating `Contract` as a key predictor.
-
-### Next Steps
-Proceed to Step 3: Preprocess the data by handling missing values, encoding categorical variables, and scaling features.
+**Didar Ali**  
+📧 didaralideed@gmail.com
