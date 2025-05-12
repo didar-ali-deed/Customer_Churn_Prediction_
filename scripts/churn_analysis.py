@@ -38,7 +38,7 @@ def explore_data():
     return data
 
 def preprocess_data(data):
-    """Preprocess the dataset for machine learning."""
+    """Preprocess the dataset for machine learning and save splits."""
     # Handle missing values in TotalCharges
     data['TotalCharges'] = pd.to_numeric(data['TotalCharges'], errors='coerce')
     data['TotalCharges'].fillna(data['TotalCharges'].median(), inplace=True)
@@ -47,13 +47,11 @@ def preprocess_data(data):
     data.drop('customerID', axis=1, inplace=True)
 
     # Encode categorical variables
-    # Label encode binary columns
     le = LabelEncoder()
     binary_cols = ['gender', 'Partner', 'Dependents', 'PhoneService', 'PaperlessBilling', 'Churn']
     for col in binary_cols:
         data[col] = le.fit_transform(data[col])
 
-    # One-hot encode multi-category columns
     categorical_cols = [
         'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup',
         'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies',
@@ -78,6 +76,13 @@ def preprocess_data(data):
     print("X_test shape:", X_test.shape)
     print("y_train shape:", y_train.shape)
     print("y_test shape:", y_test.shape)
+
+    # Save preprocessed data
+    X_train.to_csv('../data/X_train.csv', index=False)
+    X_test.to_csv('../data/X_test.csv', index=False)
+    y_train.to_csv('../data/y_train.csv', index=False)
+    y_test.to_csv('../data/y_test.csv', index=False)
+    print("\nSaved preprocessed data to data/ folder.")
 
     return X_train, X_test, y_train, y_test
 
